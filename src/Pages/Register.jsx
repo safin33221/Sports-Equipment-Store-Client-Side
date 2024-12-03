@@ -1,10 +1,24 @@
-import { Link } from "react-router-dom";
+import {  CiImageOn } from "react-icons/ci";
 
-const Login = () => {
+const Register = () => {
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg">
-            <h1 className="text-2xl font-bold text-center mb-3">Login Now</h1>
-
+            <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
+            <label className="input input-bordered flex items-center gap-2">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="h-4 w-4 opacity-70">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                </svg>
+                <input type="text" className="grow" placeholder="Name" />
+            </label>
+            <label className="input input-bordered flex items-center gap-2 my-2">
+                <CiImageOn />
+                <input type="text" className="grow" placeholder="Photo URL" />
+            </label>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -16,10 +30,10 @@ const Login = () => {
                     <path
                         d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
-                <input type="text" className="grow" placeholder="Email" />
+                <input type="email" className="grow" placeholder="Email" />
             </label>
 
-            <label className="input input-bordered flex items-center gap-2 my-4">
+            <label className="input input-bordered flex items-center gap-2 my-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -33,20 +47,10 @@ const Login = () => {
                 <input type="password" className="grow" placeholder="password" />
             </label>
             <label>
-                
-                <button className="btn w-40 font-bold mx-auto block">Login</button>
+                <button className="btn mx-auto block w-40">Register</button>
             </label>
-            <hr className="my-3"/>
-            <div className="flex gap-4">
-                <h1 className="font-bold text-xl">Login With:</h1>
-                <button className="btn btn-outline btn-sm">Google</button>
-                <button className="btn btn-outline btn-sm">Facebook</button>
-                
-            </div>
-            <hr className="my-3"/>
-            <h1>Don't have an account <Link to='/register' className='text-red-400 underline'>Register Now</Link></h1>
         </div>
     );
 };
 
-export default Login;
+export default Register
