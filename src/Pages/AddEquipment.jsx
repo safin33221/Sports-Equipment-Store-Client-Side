@@ -32,6 +32,7 @@ const AddEquipment = () => {
         })
             .then(data => {
                 console.log(data);
+                form.reset()
             })
 
 
