@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { authContext } from '../Provider/AuthProvider';
+import { HiH1 } from 'react-icons/hi2';
 
 const Navbar = () => {
     const links = <>
@@ -8,6 +10,17 @@ const Navbar = () => {
         <li><NavLink to='/AddEquipment'>Add Equipment </NavLink></li>
         <li><NavLink to='/MyEquipment List'>My Equipment List</NavLink></li>
     </>
+    const { user,signOutUser } = useContext(authContext)
+    console.log(user, signOutUser);
+    const handleSignOut = () => {
+        signOutUser()
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto">
             <div className="navbar-start">
@@ -40,7 +53,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">Login</Link>
+                {
+                    user ?
+                        user.email ? <h1>{user.email}</h1> : null
+                        : null
+                }
+                {
+                    user ?
+                        <button onClick={handleSignOut} className="btn">Logout</button>
+                        : <Link to='/login' className="btn">Login</Link>
+                }
             </div>
         </div>
     );
