@@ -2,23 +2,44 @@ import { useContext } from "react";
 import { CiImageOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const { createUserWithGoogle } = useContext(authContext)
+    const { createUserWithGoogle, createUserWithEmailPass, setUser } = useContext(authContext)
+
+    const handleRegisterWithEmailPassowrd = e => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value
+        const photo = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
+        const user = { name, photo, email, password }
+        console.log(user);
+
+        createUserWithEmailPass(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                updateProfile(user, { displayName: name, photoURL: photo })
+                setUser(user)
+            })
+
+    }
 
     const handleRegisterWithGoogle = e => {
         createUserWithGoogle()
             .then(result => {
                 console.log(result);
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
             })
     }
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg">
             <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
-            <form  >
+            <form onSubmit={handleRegisterWithEmailPassowrd} >
                 <label className="input input-bordered flex items-center gap-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +49,11 @@ const Register = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input type="text" className="grow" placeholder="Name" />
+                    <input name="name" type="text" className="grow" placeholder="Name" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2 my-2">
                     <CiImageOn />
-                    <input type="text" className="grow" placeholder="Photo URL" />
+                    <input name="photo" type="text" className="grow" placeholder="Photo URL" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <svg
@@ -45,7 +66,7 @@ const Register = () => {
                         <path
                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                     </svg>
-                    <input type="email" className="grow" placeholder="Email" />
+                    <input name="email" type="email" className="grow" placeholder="Email" />
                 </label>
 
                 <label className="input input-bordered flex items-center gap-2 my-2">
@@ -59,10 +80,10 @@ const Register = () => {
                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                             clipRule="evenodd" />
                     </svg>
-                    <input type="password" className="grow" placeholder="password" />
+                    <input name="password" type="password" className="grow" placeholder="password" />
                 </label>
                 <label>
-                    <button className="btn mx-auto block w-40">Register</button>
+                    <button type="submit" className="btn mx-auto block w-40">Register</button>
                 </label>
             </form>
             <hr className="my-3" />

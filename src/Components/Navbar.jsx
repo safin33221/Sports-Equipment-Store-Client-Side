@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to='/MyEquipment List'>My Equipment List</NavLink></li>
     </>
     const { user,signOutUser } = useContext(authContext)
-    console.log(user, signOutUser);
+    // console.log(user, signOutUser);
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        user.email ? <h1>{user.email}</h1> : null
+                        user.displayName ? <h1>{user.displayName}</h1> : null
                         : null
                 }
                 {
