@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { authContext } from '../Provider/AuthProvider';
 
 const AddEquipment = () => {
+    const { user } = useContext(authContext)
     const handleAddItem = e => {
         e.preventDefault()
         const form = e.target
@@ -15,9 +17,24 @@ const AddEquipment = () => {
         const processingTime = form.processingTime.value
         const stockStatus = form.stockStatus.value
 
-        const itemDetails = { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus }
-        
-        console.log(itemDetails);
+        const email = user.email
+        const name = user.displayName
+        console.log(email, name);
+
+        const productDetails = { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, email, name }
+        fetch('http://localhost:5000/SportsEquipment', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(productDetails)
+
+        })
+            .then(data => {
+                console.log(data);
+            })
+
+
     }
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
