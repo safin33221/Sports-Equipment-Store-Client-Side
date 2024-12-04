@@ -1,16 +1,20 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
-import { HiH1 } from 'react-icons/hi2';
+
 
 const Navbar = () => {
+    const { user, signOutUser } = useContext(authContext)
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/SportsEquipment'>All Sports Equipment</NavLink></li>
-        <li><NavLink to='/AddEquipment'>Add Equipment </NavLink></li>
-        <li><NavLink to='/MyEquipment List'>My Equipment List</NavLink></li>
+        {
+            user && <>
+                <li><NavLink to='/AddEquipment'>Add Equipment </NavLink></li>
+                <li><NavLink to={`/MyEquipmentList/${user.email}`}>My Equipment List</NavLink></li>
+            </>
+        }
     </>
-    const { user,signOutUser } = useContext(authContext)
     // console.log(user, signOutUser);
     const handleSignOut = () => {
         signOutUser()
@@ -55,7 +59,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        user.displayName ? <h1>{user.displayName}</h1> : null
+                        user?.photoURL ? <img title={user.displayName} src={user.photoURL} className='rounded-full w-12 mx-3' alt="" /> : null
                         : null
                 }
                 {
