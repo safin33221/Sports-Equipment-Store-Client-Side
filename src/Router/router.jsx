@@ -5,6 +5,7 @@ import Register from "../Pages/Register";
 import AddEquipment from '../Pages/AddEquipment';
 import Home from '../Pages/Home';
 import AllSportsEquipment from '../Pages/AllSportsEquipment';
+import EquipmentsDetails from '../Pages/EquipmentsDetails';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
                 path: '/SportsEquipment',
                 element: <AllSportsEquipment></AllSportsEquipment>,
                 loader: () => fetch('http://localhost:5000/SportsEquipment')
+
+            },
+            {
+                path: '/EquipmentDetails/:id',
+                element: <EquipmentsDetails></EquipmentsDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/SportsEquipment/${params.id}`)
 
             },
             {
