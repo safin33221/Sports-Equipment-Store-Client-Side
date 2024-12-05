@@ -45,6 +45,7 @@ const UpdateEquipments = () => {
                     <div className='w-1/2'>
                         <label className="block text-sm font-medium text-gray-700">User Email</label>
                         <input
+                            disabled
                             value={email}
                             type="text"
                             name="image"
@@ -56,6 +57,7 @@ const UpdateEquipments = () => {
                     <div className='w-1/2'>
                         <label className="block text-sm font-medium text-gray-700">User Name</label>
                         <input
+                            disabled
                             value={name}
                             type="text"
                             name="image"
