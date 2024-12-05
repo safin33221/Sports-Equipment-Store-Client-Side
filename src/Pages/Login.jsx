@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const { loginUserWithEmailPass, createUserWithGoogle } = useContext(authContext)
+    const navigate = useNavigate()
     const handleLoginwithEimailPasswored = (e) => {
         e.preventDefault()
         const form = e.target
@@ -14,15 +16,43 @@ const Login = () => {
         loginUserWithEmailPass(email, password)
             .then(result => {
                 console.log(result);
+                navigate('/')
+                return toast.success('Login successful', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+
+                });
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.code);
+                if (error.code === "auth/invalid-credential") {
+                    return toast.error(' Invalid Email or Password', {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+
+                    });
+                }
             })
     }
     const handleLoginWithGoogle = () => {
         createUserWithGoogle()
             .then(result => {
                 console.log(result);
+                navigate('/')
+                return toast.success('Login successful with Google', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+
+                });
             })
             .catch(error => {
                 console.log(error);

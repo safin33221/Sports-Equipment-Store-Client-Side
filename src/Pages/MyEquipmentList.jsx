@@ -58,15 +58,7 @@ const MyEquipmentList = () => {
                 });
             }
         });
-        // fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
-        //     method: "DELETE"
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         const remaining = products.filter(product => product._id !== _id)
-        //         setProducts(remaining)
-        //     })
+        
     }
     return (
         <div>
@@ -76,8 +68,8 @@ const MyEquipmentList = () => {
                 products.map(item => <div key={item._id} className='w-11/12 mx-auto'>
 
 
-                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex my-3">
-                        <img src={item.image} alt={item.itemName} className="w-1/4   m-5 rounded-l-lg object-cover" />
+                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex my-3 " >
+                        <img src={item.image} alt={item.itemName} className="w-1/4   m-5 rounded-l-lg object-contain bg-cover object-center" />
                         <div className="p-4 ">
                             <h2 className="text-xl font-semibold text-gray-800">{item.itemName}</h2>
                             <p className="text-sm text-gray-600">{item.categoryName}</p>

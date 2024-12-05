@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 
 const Navbar = () => {
@@ -59,7 +60,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        user?.photoURL ? <img title={user.displayName} src={user.photoURL} className='rounded-full w-12 mx-3' alt="" /> : null
+                        user?.photoURL ? <img title={user.displayName} src={user.photoURL} className='rounded-full w-12 mx-3' alt="" /> : <FaRegUserCircle title={user.displayName} className='text-4xl mx-3 ' />
                         : null
                 }
                 {

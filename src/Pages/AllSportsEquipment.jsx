@@ -6,7 +6,7 @@ const AllSportsEquipment = () => {
     const { itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = loadedproduct;
     return (
         <div className="w-11/12 mx-auto">
-            <h1>total product : {loadedproduct.length}</h1>
+            <h1 className="font-bold ">Total products : {loadedproduct.length}</h1>
 
 
             <div className="overflow-x-auto">
