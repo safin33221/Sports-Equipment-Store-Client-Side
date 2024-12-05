@@ -1,22 +1,29 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const MyEquipmentList = () => {
     const Equipments = useLoaderData()
+    const [products,setProducts] = useState(Equipments)
     console.log(Equipments);
     // const { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = Equipments
 
     const handleDelete = _id => {
-        // fetch(`http://localhost:5173/SportsEquipment/${_id}`,)
-        // .then(data => {
-        //     console.log(data);
-        // })
+        fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const remaining = products.filter(product => product._id !== _id)
+                setProducts(remaining)
+            })
     }
     return (
         <div>
-            <h1>my e:{Equipments.length}</h1>
+            <h1>my e:{products.length}</h1>
 
             {
-                Equipments.map(item => <div key={item._id} className='w-11/12 mx-auto'>
+                products.map(item => <div key={item._id} className='w-11/12 mx-auto'>
 
 
                     <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex">
@@ -40,7 +47,7 @@ const MyEquipmentList = () => {
                                 <p className="text-sm text-gray-600">Stock Status: {item.stockStatus} in stock</p>
                             </div>
                             <div className="py-3 flex gap-3 justify-start text-black">
-                                <Link to={`/UpdateEquipments/${item._id}`} 
+                                <Link to={`/UpdateEquipments/${item._id}`}
                                     className="px-4 py-2 btn btn-outline rounded-md hover:bg-blue-700 transition">
                                     Update
                                 </Link>

@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 const UpdateEquipments = () => {
     const loadedData = useLoaderData()
 
-    const { _id,email,name, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = loadedData
+    const { _id, email, name, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = loadedData
 
     const handleUpdate = e => {
         e.preventDefault()
@@ -30,10 +30,11 @@ const UpdateEquipments = () => {
             },
             body: JSON.stringify(updateProductDetails)
         })
+            .then(res => res.json())
             .then(result => {
                 console.log(result);
             })
-            .catch(error => console.log(error))
+
     }
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
