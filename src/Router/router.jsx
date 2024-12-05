@@ -8,6 +8,7 @@ import AllSportsEquipment from '../Pages/AllSportsEquipment';
 import EquipmentsDetails from '../Pages/EquipmentsDetails';
 import MyEquipmentList from '../Pages/MyEquipmentList';
 import UpdateEquipments from '../Pages/UpdateEquipments';
+import PrivetRoute from '../PirvetRoute/PrivetRoute';
 
 const router = createBrowserRouter([
     {
@@ -36,24 +37,26 @@ const router = createBrowserRouter([
             },
             {
                 path: '/EquipmentDetails/:id',
-                element: <EquipmentsDetails></EquipmentsDetails>,
+                element: <PrivetRoute>
+                    <EquipmentsDetails></EquipmentsDetails>
+                </PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/SportsEquipment/${params.id}`)
 
             },
             {
                 path: '/AddEquipment',
-                element: <AddEquipment></AddEquipment>
+                element: <PrivetRoute><AddEquipment></AddEquipment></PrivetRoute>
 
             },
             {
                 path: `/MyEquipmentList/:email`,
-                element: <MyEquipmentList></MyEquipmentList>,
+                element: <PrivetRoute><MyEquipmentList></MyEquipmentList></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/MyEquipmentList/${params.email}`)
 
             },
             {
                 path: `/UpdateEquipments/:id`,
-                element: <UpdateEquipments></UpdateEquipments>,
+                element: <PrivetRoute><UpdateEquipments></UpdateEquipments></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/SportsEquipment/${params.id}`)
 
             },
