@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProductCard from './ProductCard';
 
 const Products = ({products}) => {
+    
     // console.log(products);
     return (
         <div className='my-10 w-11/12 mx-auto'>

@@ -8,6 +8,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
     const [loading,setLoading] = useState(true)
+    const [theme, setTheme] = useState(true)
     // console.log(user);
 
 
@@ -51,7 +52,9 @@ const AuthProvider = ({ children }) => {
         signOutUser,
         setUser,
         user,
-        loading
+        loading,
+        theme,
+        setTheme
     }
     return (
         <authContext.Provider value={authInfo}>

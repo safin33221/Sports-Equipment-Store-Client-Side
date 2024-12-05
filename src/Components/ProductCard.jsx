@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { authContext } from '../Provider/AuthProvider';
 
 const ProductCard = ({ product }) => {
     // console.log(product);
-    const {_id, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = product
+    const { theme } = useContext(authContext)
+    const { _id, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = product
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className={`${theme?"w-11/12 mx-auto text-black":"w-11/12 mx-auto !text-white"}`}>
 
 
             <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden w-96">
-                <img src={image} alt={itemName} className=" h-52 bg-black m-5 rounded-l-lg object-cover" />
+                <img src={image} alt={itemName} className="  h-52  mx-auto bg-contain bg-black m-5 rounded-lg object-contain" />
                 <div className="p-4 ">
-                    <h2 className="text-xl font-semibold text-gray-800">{itemName}</h2>
-                    <p className="text-sm text-gray-600">{categoryName}</p>
-                    <p className="mt-2 text-gray-700">{description}</p>
+                    <h2 className="text-xl font-semibold ">{itemName}</h2>
+                    <p className="text-sm ">{categoryName}</p>
+                    <p className="mt-2 ">{description}</p>
                     <div className="mt-3">
-                        <p className="text-lg font-semibold text-orange-500">${price}</p>
+                        <p className="text-lg font-semibold ">${price}</p>
 
                     </div>
 
                     <div className="py-3 flex justify-start">
                         <Link to={`EquipmentDetails/${_id}`}>
-                            <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                            <button className="px-4 py-2 btn rounded-md hover:btn-outline transition">
                                 View Details
                             </button>
                         </Link>
