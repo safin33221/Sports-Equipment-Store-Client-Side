@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateEquipments = () => {
     const loadedData = useLoaderData()
@@ -33,6 +34,13 @@ const UpdateEquipments = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Update Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
 
     }
