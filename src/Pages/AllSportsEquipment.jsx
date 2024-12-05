@@ -1,12 +1,21 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllSportsEquipment = () => {
     const loadedproduct = useLoaderData()
-    const { itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = loadedproduct;
+    const [products, setProducts] = useState(loadedproduct)
+    
+    const handleSortByPrice = () => {
+        const sortProduct = [...loadedproduct].sort((a, b) => a.price - b.price)
+        setProducts(sortProduct)
+    }
     return (
         <div className="w-11/12 mx-auto">
-            <h1 className="font-bold ">Total products : {loadedproduct.length}</h1>
+            <div className="flex justify-between">
+                <h1 className="font-bold ">Total products : {loadedproduct.length}</h1>
+                <button onClick={handleSortByPrice} className="btn">Sort by price</button>
+            </div>
 
 
             <div className="overflow-x-auto">
@@ -26,12 +35,12 @@ const AllSportsEquipment = () => {
                     </thead>
                     <tbody>
                         {
-                            loadedproduct.map((product,idx) =>
+                            products.map((product, idx) =>
                                 <tr key={product._id}>
-                                    <th>{idx+1}</th>
+                                    <th>{idx + 1}</th>
                                     <td>{product.itemName}</td>
                                     <td>{product.categoryName}</td>
-                                    <td>{product.price}</td>
+                                    <td>{product.price}$</td>
                                     <td>{product.rating}</td>
                                     <td>{product.stockStatus}</td>
                                     <Link to={`/EquipmentDetails/${product._id}`} className="btn btn-sm block mt-1.5">Viwe Details</Link>

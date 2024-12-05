@@ -48,19 +48,28 @@ const Register = () => {
                 console.log(user);
                 updateProfile(user, { displayName: name, photoURL: photo })
                 setUser(user)
+                navigate('/')
+                return toast.success('Registration successful', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+
+                });
             })
 
     }
 
-    const handleRegisterWithGoogle = e => {
-        createUserWithGoogle()
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
+    // const handleRegisterWithGoogle = e => {
+    //     createUserWithGoogle()
+    //         .then(result => {
+    //             console.log(result);
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         })
+    // }
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg">
             <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
@@ -74,11 +83,11 @@ const Register = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input name="name" type="text" className="grow" placeholder="Name" />
+                    <input required name="name" type="text" className="grow" placeholder="Name" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2 my-2">
                     <CiImageOn />
-                    <input name="photo" type="text" className="grow" placeholder="Photo URL" />
+                    <input required name="photo" type="text" className="grow" placeholder="Photo URL" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <svg
@@ -91,7 +100,7 @@ const Register = () => {
                         <path
                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                     </svg>
-                    <input name="email" type="email" className="grow" placeholder="Email" />
+                    <input required name="email" type="email" className="grow" placeholder="Email" />
                 </label>
 
                 <label className="input input-bordered flex items-center gap-2 my-2">
@@ -105,20 +114,20 @@ const Register = () => {
                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                             clipRule="evenodd" />
                     </svg>
-                    <input name="password" type="password" className="grow" placeholder="password" />
+                    <input required name="password" type="password" className="grow" placeholder="password" />
                 </label>
                 <label>
-                    <button type="submit" className="btn mx-auto block w-40">Register</button>
+                    <button type="submit" className="btn mx-auto block w-full">Register</button>
                 </label>
             </form>
             <hr className="my-3" />
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
                 <h1 className="font-bold text-xl">Login With:</h1>
                 <button onClick={handleRegisterWithGoogle} className="btn btn-outline btn-sm">Google</button>
                 <button className="btn btn-outline btn-sm">Facebook</button>
 
-            </div>
-            <hr className="my-3" />
+            </div> */}
+            {/* <hr className="my-3" /> */}
             <h1>Already have an account <Link to='/login' className='text-red-400 underline'>Login Now</Link></h1>
         </div>
     );
