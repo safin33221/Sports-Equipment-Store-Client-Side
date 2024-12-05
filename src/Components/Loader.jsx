@@ -7,9 +7,9 @@ const Loader = () => {
 
             <RotatingLines
                 visible={true}
-                height="96"
-                width="96"
-                color="grey"
+                height="52"
+                width="52"
+                color="black"
                 strokeWidth="5"
                 animationDuration="0.75"
                 ariaLabel="rotating-lines-loading"

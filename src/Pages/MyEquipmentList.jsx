@@ -20,14 +20,14 @@ const MyEquipmentList = () => {
     }
     return (
         <div>
-            <h1>my e:{products.length}</h1>
+            <h1 className="text-2xl font-bold w-11/12 mx-auto">My Equipments:{products.length}</h1>
 
             {
                 products.map(item => <div key={item._id} className='w-11/12 mx-auto'>
 
 
-                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex">
-                        <img src={item.photoURL} alt={item.itemName} className="w-1/3 h-72 bg-black m-5 rounded-l-lg object-cover" />
+                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex my-3">
+                        <img src={item.image} alt={item.itemName} className="w-1/4   m-5 rounded-l-lg object-cover" />
                         <div className="p-4 ">
                             <h2 className="text-xl font-semibold text-gray-800">{item.itemName}</h2>
                             <p className="text-sm text-gray-600">{item.categoryName}</p>

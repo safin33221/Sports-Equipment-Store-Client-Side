@@ -10,7 +10,7 @@ const EquipmentsDetails = () => {
 
 
             <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex">
-                <img src={image} alt={itemName} className="w-1/2 h-96 bg-black m-5 rounded-l-lg object-cover" />
+                <img src={image} alt={itemName} className="w-1/4 bg-black m-5 rounded-l-lg object-cover" />
                 <div className="p-4 ">
                     <h2 className="text-xl font-semibold text-gray-800">{itemName}</h2>
                     <p className="text-sm text-gray-600">{categoryName}</p>

@@ -3,6 +3,7 @@ import { CiImageOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const { createUserWithGoogle, createUserWithEmailPass, setUser } = useContext(authContext)
@@ -14,6 +15,30 @@ const Register = () => {
         const photo = form.photo.value
         const email = form.email.value
         const password = form.password.value
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+        const passwordRegexLength = /^.{6,}$/;
+        if (!passwordRegexLength.test(password)) {
+            return toast.error(' Must be at least 6 characters long', {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+
+            });
+        }
+
+        if (!passwordRegex.test(password)) {
+            return toast.error(' Must contain uppercase, and lowercase letters', {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+
+            });
+        }
+
         const user = { name, photo, email, password }
         console.log(user);
 
