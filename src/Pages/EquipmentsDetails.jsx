@@ -9,8 +9,8 @@ const EquipmentsDetails = () => {
         <div className='w-11/12 mx-auto'>
 
 
-            <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex">
-                <img src={image} alt={itemName} className="w-1/4 bg-black m-5 rounded-l-lg object-cover" />
+            <div className=" rounded-lg border border-base-200 shadow-lg overflow-hidden flex">
+                <img src={image} alt={itemName} className="w-1/4 border-2 shadow-lg m-5 rounded-l-lg object-cover" />
                 <div className="p-4 ">
                     <h2 className="text-xl font-semibold text-gray-800">{itemName}</h2>
                     <p className="text-sm text-gray-600">{categoryName}</p>
@@ -29,11 +29,7 @@ const EquipmentsDetails = () => {
                         <p className="text-sm text-gray-600">Processing Time: {processingTime}</p>
                         <p className="text-sm text-gray-600">Stock Status: {stockStatus} in stock</p>
                     </div>
-                    <div className="py-3 flex justify-start">
-                        <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-                            Add to Cart
-                        </button>
-                    </div>
+                    
                 </div>
             </div>
         </div>

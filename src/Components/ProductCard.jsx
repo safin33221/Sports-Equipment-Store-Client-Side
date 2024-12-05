@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
-    console.log(product);
-    const { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus} = product
+    // console.log(product);
+    const {_id, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = product
     return (
         <div className='w-11/12 mx-auto'>
 
@@ -15,13 +16,15 @@ const ProductCard = ({ product }) => {
                     <p className="mt-2 text-gray-700">{description}</p>
                     <div className="mt-3">
                         <p className="text-lg font-semibold text-orange-500">${price}</p>
-                        
+
                     </div>
-                    
+
                     <div className="py-3 flex justify-start">
-                        <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-                            View Details
-                        </button>
+                        <Link to={`EquipmentDetails/${_id}`}>
+                            <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                                View Details
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

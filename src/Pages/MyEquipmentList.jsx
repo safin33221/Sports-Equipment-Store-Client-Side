@@ -1,22 +1,72 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyEquipmentList = () => {
     const Equipments = useLoaderData()
-    const [products,setProducts] = useState(Equipments)
+    const [products, setProducts] = useState(Equipments)
     console.log(Equipments);
     // const { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = Equipments
 
     const handleDelete = _id => {
-        fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                const remaining = products.filter(product => product._id !== _id)
-                setProducts(remaining)
-            })
+
+
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success mx-3",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        const remaining = products.filter(product => product._id !== _id)
+                        setProducts(remaining)
+                        swalWithBootstrapButtons.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    })
+
+
+
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your imaginary file is safe :)",
+                    icon: "error"
+                });
+            }
+        });
+        // fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
+        //     method: "DELETE"
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         const remaining = products.filter(product => product._id !== _id)
+        //         setProducts(remaining)
+        //     })
     }
     return (
         <div>
