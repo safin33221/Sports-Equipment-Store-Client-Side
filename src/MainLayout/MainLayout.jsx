@@ -5,14 +5,15 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const MainLayout = () => {
     return (
         <div>
-            <nav>
+            <nav className="bg-[#f3f4f6] ">
                 <Navbar></Navbar>
             </nav>
 
-            <main className="my-5">
+            <main className="">
                 <Outlet></Outlet>
             </main>
 

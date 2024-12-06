@@ -7,10 +7,10 @@ const ProductCard = ({ product }) => {
     const { theme } = useContext(authContext)
     const { _id, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = product
     return (
-        <div className={`${theme?"w-11/12 mx-auto text-black":"w-11/12 mx-auto !text-white"}`}>
+        <div className={`${theme?"w-11/12 hover:scale-105 duration-200 ease-in-out m-5 overflow-hidden mx-auto text-black":"w-11/12 mx-auto !text-white hover:scale-105 duration-200 ease-in-out m-5"}`}>
 
 
-            <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden w-96">
+            <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden ">
                 <img src={image} alt={itemName} className="  h-52  mx-auto bg-contain bg-black m-5 rounded-lg object-contain" />
                 <div className="p-4 ">
                     <h2 className="text-xl font-semibold ">{itemName}</h2>
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
 
                     <div className="py-3 flex justify-start">
                         <Link to={`EquipmentDetails/${_id}`}>
-                            <button className="px-4 py-2 btn rounded-md hover:btn-outline transition">
+                            <button className="px-4  py-2 btn rounded-md hover:btn-outline transition">
                                 View Details
                             </button>
                         </Link>

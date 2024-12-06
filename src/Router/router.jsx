@@ -9,11 +9,13 @@ import EquipmentsDetails from '../Pages/EquipmentsDetails';
 import MyEquipmentList from '../Pages/MyEquipmentList';
 import UpdateEquipments from '../Pages/UpdateEquipments';
 import PrivetRoute from '../PirvetRoute/PrivetRoute';
+import ErrorPage from '../Pages/ErrorPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

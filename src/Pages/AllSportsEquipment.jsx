@@ -11,15 +11,15 @@ const AllSportsEquipment = () => {
         setProducts(sortProduct)
     }
     return (
-        <div className="w-11/12 mx-auto">
-            <div className="flex justify-between">
+        <div className="w-11/12 mx-auto py-5 ">
+            <div className="flex justify-between py-4 items-center">
                 <h1 className="font-bold ">Total products : {loadedproduct.length}</h1>
                 <button onClick={handleSortByPrice} className="btn">Sort by price</button>
             </div>
 
 
             <div className="overflow-x-auto">
-                <table className="table table-zebra">
+                <table className="table table-zebra border-2 ">
                     {/* head */}
                     <thead>
                         <tr>
@@ -43,7 +43,7 @@ const AllSportsEquipment = () => {
                                     <td>{product.price}$</td>
                                     <td>{product.rating}</td>
                                     <td>{product.stockStatus}</td>
-                                    <Link to={`/EquipmentDetails/${product._id}`} className="btn btn-sm block mt-1.5">Viwe Details</Link>
+                                    <Link to={`/EquipmentDetails/${product._id}`} className="btn btn-sm my-1.5">Viwe Details</Link>
                                 </tr>
                             )
                         }
