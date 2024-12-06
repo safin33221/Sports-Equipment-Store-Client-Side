@@ -4,6 +4,7 @@ import Products from '../Components/Products';
 import { useLoaderData } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import SportsHub from '../Components/SportsHub';
+import TrastedSports from '../Components/TrastedSports';
 
 
 const Home = () => {
@@ -43,6 +44,8 @@ const Home = () => {
             <Products products={products}></Products>
 
             <SportsHub></SportsHub>
+
+            <TrastedSports></TrastedSports>
 
         </div>
     );

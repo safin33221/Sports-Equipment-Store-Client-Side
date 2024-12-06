@@ -1,14 +1,14 @@
 import Lottie from "lottie-react";
-// import groovyWalkAnimation from "./groovyWalk.json";
+import animation from "../../public/animation.json"
 
 const SportsHub = () => {
     return (
         <div>
-            <div className="py-16 flex  w-11/12 mx-auto">
-                <div className="w-1/2">
-                    {/* <Lottie animationData={groovyWalkAnimation} /> */}
+            <div className="py-16 flex flex-col md:flex-row gap-4  w-11/12 mx-auto">
+                <div className="md:w-1/2 ">
+                    <Lottie animationData={animation} />
                 </div >
-                <div className=" w-1/2 mx-auto text-center">
+                <div className=" w-4/5 md:w-1/2 mx-auto text-center">
                     <h2 className="text-3xl font-bold py-3">Why Choose Us?</h2>
                     <p className="text-lg leading-relaxed mb-10">
                         At <span className="font-semibold">Your Sports Hub</span>, we believe in delivering excellence.
