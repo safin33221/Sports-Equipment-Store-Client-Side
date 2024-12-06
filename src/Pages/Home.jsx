@@ -3,6 +3,7 @@ import Banner from '../Components/Banner';
 import Products from '../Components/Products';
 import { useLoaderData } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
+import SportsHub from '../Components/SportsHub';
 
 
 const Home = () => {
@@ -40,6 +41,8 @@ const Home = () => {
 
             {/* Our product section */}
             <Products products={products}></Products>
+
+            <SportsHub></SportsHub>
 
         </div>
     );
