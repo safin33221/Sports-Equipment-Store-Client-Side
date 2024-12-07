@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <footer className="footer footer-center bg-base-300 text-black p-10">
             <aside>
-                <img className="w-16 h-16 rounded-full" src={logo} alt="" />
+                <img className="w-16 h-16 rounded-full bg-cover object-center top-10" src={logo} alt="" />
                 <p className="font-bold">
                     Sports Equipment
                     <br />

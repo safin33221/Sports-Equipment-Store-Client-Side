@@ -5,14 +5,15 @@ import { useLoaderData } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import SportsHub from '../Components/SportsHub';
 import TrastedSports from '../Components/TrastedSports';
+import SportsCategory from '../Components/SportsCategory';
 
 
 const Home = () => {
     const products = useLoaderData()
-   const {theme,setTheme} = useContext(authContext)
+    const { theme, setTheme } = useContext(authContext)
     return (
-        <div className={`${theme ? "bg-white pt-14" : "bg-gray-800 text-white pt-14 "}`}>
-      
+        <div className={`${theme ? "bg-white pt-14 overflow-x-hidden" : "bg-gray-800 text-white pt-14 overflow-x-hidden"}`}>
+
             <div className="  flex justify-end mx-5 "><label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input onClick={() => setTheme(!theme)} type="checkbox" className="theme-controller" value="synthwave" />
@@ -43,6 +44,8 @@ const Home = () => {
             {/* Our product section */}
             <Products products={products}></Products>
 
+            {/* sport category section  */}
+            <SportsCategory></SportsCategory>
             <SportsHub></SportsHub>
 
             <TrastedSports></TrastedSports>

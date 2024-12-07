@@ -8,12 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div >
             <nav className="bg-[#f3f4f6] ">
                 <Navbar></Navbar>
             </nav>
 
-            <main className="">
+            <main >
                 <Outlet></Outlet>
             </main>
 

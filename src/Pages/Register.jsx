@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { CiImageOn } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 
 const Register = () => {
-    const { createUserWithGoogle, createUserWithEmailPass, setUser } = useContext(authContext)
+    const {  createUserWithEmailPass, setUser } = useContext(authContext)
+    const navigate = useNavigate()
 
     const handleRegisterWithEmailPassowrd = e => {
         e.preventDefault()
@@ -61,17 +62,9 @@ const Register = () => {
 
     }
 
-    // const handleRegisterWithGoogle = e => {
-    //     createUserWithGoogle()
-    //         .then(result => {
-    //             console.log(result);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
+    
     return (
-        <div className="w-96 mx-auto p-10 border-2 rounded-lg">
+        <div className="w-96 mx-auto p-10 border-2 rounded-lg my-6">
             <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
             <form onSubmit={handleRegisterWithEmailPassowrd} >
                 <label className="input input-bordered flex items-center gap-2">
@@ -117,17 +110,11 @@ const Register = () => {
                     <input required name="password" type="password" className="grow" placeholder="password" />
                 </label>
                 <label>
-                    <button type="submit" className="btn mx-auto block w-full">Register</button>
+                    <button type="submit" className="btn btn-outline  mx-auto block w-full">Register</button>
                 </label>
             </form>
             <hr className="my-3" />
-            {/* <div className="flex gap-4">
-                <h1 className="font-bold text-xl">Login With:</h1>
-                <button onClick={handleRegisterWithGoogle} className="btn btn-outline btn-sm">Google</button>
-                <button className="btn btn-outline btn-sm">Facebook</button>
-
-            </div> */}
-            {/* <hr className="my-3" /> */}
+            
             <h1>Already have an account <Link to='/login' className='text-red-400 underline'>Login Now</Link></h1>
         </div>
     );

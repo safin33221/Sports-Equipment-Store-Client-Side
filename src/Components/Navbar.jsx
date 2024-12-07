@@ -51,8 +51,8 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <img className="w-16  h-10 rounded-full" src={logo} alt="" />
-                <a className="btn btn-ghost text-xl hidden md:flex">Sports Equipment</a>
+                <img className="w-12  h-12 rounded-full" src={logo} alt="" />
+                <a className=" mx-3 font-bold  text-2xl hidden md:flex">Sports Equipment</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -59,7 +59,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="w-96 mx-auto p-10 border-2 rounded-lg">
+        <div className="w-96 mx-auto p-10 border-2 rounded-lg py-10 my-6">
             <h1 className="text-2xl font-bold text-center mb-3">Login Now</h1>
 
             <form onSubmit={handleLoginwithEimailPasswored}>
@@ -92,14 +92,14 @@ const Login = () => {
                 </label>
                 <label>
 
-                    <button type="submit" className="btn w-40 font-bold mx-auto block">Login</button>
+                    <button type="submit" className="btn w-full font-bold mx-auto block">Login</button>
                 </label>
             </form>
             <hr className="my-3" />
             <div className="flex gap-4">
-                <h1 className="font-bold text-xl">Login With:</h1>
-                <button onClick={handleLoginWithGoogle} className="btn btn-outline btn-sm">Google</button>
-                <button className="btn btn-outline btn-sm">Facebook</button>
+                
+                <button onClick={handleLoginWithGoogle} className="btn btn-outline w-full ">Login with Google</button>
+                
 
             </div>
             <hr className="my-3" />
