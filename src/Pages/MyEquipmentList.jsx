@@ -30,7 +30,7 @@ const MyEquipmentList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
+                fetch(`https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -68,8 +68,8 @@ const MyEquipmentList = () => {
                 products.map(item => <div key={item._id} className='w-11/12 mx-auto'>
 
 
-                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex my-3 " >
-                        <img src={item.image} alt={item.itemName} className="w-1/4   m-5 rounded-l-lg object-contain bg-cover object-center" />
+                    <div className=" rounded-lg border border-gray-300 shadow-lg overflow-hidden flex my-3 flex-col md:flex-row " >
+                        <img src={item.image} alt={item.itemName} className="md:w-1/4 shadow-lg   m-5 rounded-l-lg object-contain bg-cover object-center" />
                         <div className="p-4 ">
                             <h2 className="text-xl font-semibold text-gray-800">{item.itemName}</h2>
                             <p className="text-sm text-gray-600">{item.categoryName}</p>
@@ -90,11 +90,11 @@ const MyEquipmentList = () => {
                             </div>
                             <div className="py-3 flex gap-3 justify-start text-black">
                                 <Link to={`/UpdateEquipments/${item._id}`}
-                                    className="px-4 py-2 btn btn-outline rounded-md hover:bg-blue-700 transition">
+                                    className="px-4 py-2 btn btn-outline !text-black rounded-md hover:bg-[#80c7e1] transition">
                                     Update
                                 </Link>
                                 <button onClick={() => handleDelete(item._id)}
-                                    className="px-4 py-2  btn btn-outline rounded-md hover:bg-blue-700 transition">
+                                    className="px-4 py-2  btn btn-outline !text-black rounded-md hover:bg-[#80c7e1] transition">
                                     Delete
                                 </button>
                             </div>

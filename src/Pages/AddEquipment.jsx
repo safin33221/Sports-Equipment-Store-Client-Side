@@ -23,7 +23,7 @@ const AddEquipment = () => {
         console.log(email, name);
 
         const productDetails = { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, email, name }
-        fetch('http://localhost:5000/SportsEquipment', {
+        fetch('https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -48,7 +48,7 @@ const AddEquipment = () => {
     }
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Add New Item</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">Add New Product</h2>
             <form onSubmit={handleAddItem}
                 className="space-y-4 grid grid-cols-12 gap-3">
                 {/* Image Input */}
@@ -164,9 +164,9 @@ const AddEquipment = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="col-span-12 w-56  mx-auto blockw-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="col-span-12 w-72 mx-auto blockw-full bg-[#80c7e1] text-black font-normal py-2 px-4 rounded-md shadow-md btn-outline focus:outline-none  "
                 >
-                    Add Item
+                    Add Product
                 </button>
             </form>
         </div>

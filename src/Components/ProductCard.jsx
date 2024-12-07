@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
 
                     <div className="py-3 flex justify-start">
                         <Link to={`EquipmentDetails/${_id}`}>
-                            <button className="px-4  py-2 btn rounded-md hover:btn-outline transition">
+                            <button className="px-4 bg-[#80c7e1]  py-2 btn rounded-md  transition">
                                 View Details
                             </button>
                         </Link>

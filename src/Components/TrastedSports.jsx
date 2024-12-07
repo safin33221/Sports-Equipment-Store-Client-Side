@@ -17,7 +17,7 @@ const TrastedSports = () => {
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <Slide direction="left" damping={0.5} duration={2000} >
-                        <div className="bg-white max-w-96 mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-52">
+                        <div className="bg-[#80c7e1] max-w-96 hover:scale-105 duration-300 ease-in-out mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-44">
                             <h3 className="text-xl font-bold text-gray-700">Happy Users Worldwide</h3>
                             <p className="text-gray-600">Join thousands of satisfied athletes who trust our premium sports gear for their performance and comfort</p>
 
@@ -26,19 +26,19 @@ const TrastedSports = () => {
 
 
                     <Slide direction='right' damping={0.5} duration={2000}>
-                        <div className="bg-white max-w-96 mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-52">
+                        <div className="bg-[#80c7e1] max-w-96 hover:scale-105 duration-300 ease-in-out mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-44">
                             <h3 className="text-xl font-bold text-gray-700">Premium Quality</h3>
                             <p className="text-gray-600">We deliver top-grade equipment designed to last, ensuring you perform at your best every time</p>
                         </div>
                     </Slide>
                     <Slide direction='left' damping={0.5} duration={3000} >
-                        <div className="bg-white max-w-96 mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-52">
+                        <div className="bg-[#80c7e1] max-w-96 hover:scale-105 duration-300 ease-in-out mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-44">
                             <h3 className="text-xl font-bold text-gray-700">Expert Support</h3>
                             <p className="text-gray-600">Our team of sports experts is always ready to assist with advice, purchases, or concerns.</p>
                         </div>
                     </Slide >
                     <Slide direction='right' damping={0.5} duration={3000} >
-                        <div className="bg-white max-w-96 mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-52">
+                        <div className="bg-[#80c7e1] max-w-96 hover:scale-105 duration-300 ease-in-out mx-auto border-2 p-6 shadow-lg rounded-lg text-center h-44">
                             <h3 className="text-xl font-bold text-gray-700">Fast & Secure Delivery</h3>
                             <p className="text-gray-600">Get your gear delivered quickly and securely, wherever you are, with hassle-free tracking.</p>
                         </div>

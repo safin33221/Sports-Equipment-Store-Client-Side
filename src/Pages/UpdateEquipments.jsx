@@ -24,7 +24,7 @@ const UpdateEquipments = () => {
 
         const updateProductDetails = { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus }
 
-        fetch(`http://localhost:5000/SportsEquipment/${_id}`, {
+        fetch(`https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

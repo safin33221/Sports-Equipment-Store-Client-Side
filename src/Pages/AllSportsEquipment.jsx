@@ -43,7 +43,7 @@ const AllSportsEquipment = () => {
                                     <td>{product.price}$</td>
                                     <td>{product.rating}</td>
                                     <td>{product.stockStatus}</td>
-                                    <Link to={`/EquipmentDetails/${product._id}`} className="btn btn-sm my-1.5">Viwe Details</Link>
+                                    <Link to={`/EquipmentDetails/${product._id}`} className="btn btn-sm mt-1">Viwe Details</Link>
                                 </tr>
                             )
                         }

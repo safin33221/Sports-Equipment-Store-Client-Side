@@ -9,8 +9,8 @@ const EquipmentsDetails = () => {
         <div className='w-11/12 mx-auto'>
 
 
-            <div className=" rounded-lg border border-base-200 shadow-lg overflow-hidden flex">
-                <img src={image} alt={itemName} className="w-1/4 border-2 shadow-lg m-5 rounded-l-lg object-cover" />
+            <div className=" m-4 rounded-lg border border-base-200 shadow-lg overflow-hidden flex flex-col md:flex-row">
+                <img src={image} alt={itemName} className="md:w-1/4 border-2 shadow-lg m-5 rounded-l-lg object-cover" />
                 <div className="p-4 ">
                     <h2 className="text-xl font-semibold text-gray-800">{itemName}</h2>
                     <p className="text-sm text-gray-600">{categoryName}</p>

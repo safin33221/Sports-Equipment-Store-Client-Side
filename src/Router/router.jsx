@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/homeProducts')
+                loader: () => fetch('https://a-sports-equipment-store-server-site.vercel.app/homeProducts')
             },
             {
                 path: '/login',
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/SportsEquipment',
                 element: <AllSportsEquipment></AllSportsEquipment>,
-                loader: () => fetch('http://localhost:5000/SportsEquipment')
+                loader: () => fetch('https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment')
 
             },
             {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
                 element: <PrivetRoute>
                     <EquipmentsDetails></EquipmentsDetails>
                 </PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/SportsEquipment/${params.id}`)
+                loader: ({ params }) => fetch(`https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment/${params.id}`)
 
             },
             {
@@ -53,13 +53,13 @@ const router = createBrowserRouter([
             {
                 path: `/MyEquipmentList/:email`,
                 element: <PrivetRoute><MyEquipmentList></MyEquipmentList></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/MyEquipmentList/${params.email}`)
+                loader: ({ params }) => fetch(`https://a-sports-equipment-store-server-site.vercel.app/MyEquipmentList/${params.email}`)
 
             },
             {
                 path: `/UpdateEquipments/:id`,
                 element: <PrivetRoute><UpdateEquipments></UpdateEquipments></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/SportsEquipment/${params.id}`)
+                loader: ({ params }) => fetch(`https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment/${params.id}`)
 
             },
 
