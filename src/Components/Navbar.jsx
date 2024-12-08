@@ -18,7 +18,7 @@ const Navbar = () => {
             </>
         }
     </>
-    // console.log(user, signOutUser);
+    
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
@@ -70,7 +70,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        user?.photoURL ? <img title={user.displayName} src={user.photoURL} className='rounded-full w-12 mx-3' alt="" /> : <FaRegUserCircle title={user.displayName} className='text-4xl mx-3 ' />
+                        user?.photoURL ? <img title={user.displayName} src={user.photoURL} className='rounded-full w-12 h-1/2 mx-3' alt="" /> : <FaRegUserCircle title={user.displayName} className='text-4xl mx-3 ' />
                         : null
                 }
                 {

@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 
 const Products = ({products}) => {
     
-    // console.log(products);
+    
     return (
         <div className='my-10 w-11/12 mx-auto'>
             <h2 className='text-3xl font-bold text-center pb-5'>Our Products</h2>

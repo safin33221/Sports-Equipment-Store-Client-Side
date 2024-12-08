@@ -44,12 +44,12 @@ const Register = () => {
         }
 
         const user = { name, photo, email, password }
-        console.log(user);
+       
 
         createUserWithEmailPass(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user);
+               
                 updateProfile(user, { displayName: name, photoURL: photo })
                 setUser(user)
                 navigate('/')

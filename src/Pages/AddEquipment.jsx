@@ -21,7 +21,7 @@ const AddEquipment = () => {
 
         const email = user.email
         const name = user.displayName
-        console.log(email, name);
+       
 
         const productDetails = { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, email, name }
         fetch('https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment', {
@@ -33,7 +33,7 @@ const AddEquipment = () => {
 
         })
             .then(data => {
-                console.log(data);
+                
                 Swal.fire({
                     position: "top-end",
                     icon: "success",

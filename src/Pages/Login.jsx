@@ -15,10 +15,10 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
         const user = { email, password }
-        console.log(user);
+        
         loginUserWithEmailPass(email, password)
             .then(result => {
-                console.log(result);
+                
                 navigate('/')
                 return toast.success('Login successful', {
                     position: "top-right",
@@ -30,7 +30,7 @@ const Login = () => {
                 });
             })
             .catch(error => {
-                console.log(error.code);
+                
                 if (error.code === "auth/invalid-credential") {
                     return toast.error(' Invalid Email or Password', {
                         position: "top-right",
@@ -46,7 +46,7 @@ const Login = () => {
     const handleLoginWithGoogle = () => {
         createUserWithGoogle()
             .then(result => {
-                console.log(result);
+                
                 navigate('/')
                 return toast.success('Login successful with Google', {
                     position: "top-right",
@@ -58,7 +58,7 @@ const Login = () => {
                 });
             })
             .catch(error => {
-                console.log(error);
+               
             })
     }
     return (

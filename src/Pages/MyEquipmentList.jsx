@@ -6,8 +6,7 @@ import Swal from "sweetalert2";
 const MyEquipmentList = () => {
     const Equipments = useLoaderData()
     const [products, setProducts] = useState(Equipments)
-    console.log(Equipments);
-    // const { image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = Equipments
+
 
     const handleDelete = _id => {
 
@@ -36,7 +35,7 @@ const MyEquipmentList = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        
                         const remaining = products.filter(product => product._id !== _id)
                         setProducts(remaining)
                         swalWithBootstrapButtons.fire({

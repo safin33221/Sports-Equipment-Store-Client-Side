@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 
 const ProductCard = ({ product }) => {
-    // console.log(product);
+   
     const { theme } = useContext(authContext)
     const { _id, image, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus } = product
     return (

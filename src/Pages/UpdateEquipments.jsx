@@ -34,7 +34,7 @@ const UpdateEquipments = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                
                 Swal.fire({
                     position: "top-end",
                     icon: "success",

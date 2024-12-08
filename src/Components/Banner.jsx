@@ -29,8 +29,7 @@ const Banner = () => {
                 
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                
             >
                 <SwiperSlide><img src={slider1} /></SwiperSlide>
                 <SwiperSlide><img src={slider2} /></SwiperSlide>
