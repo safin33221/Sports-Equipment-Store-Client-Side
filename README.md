@@ -16,7 +16,7 @@ Check out the live site: [Sports Equipment Store](https://sports-equipment-store
 - React.js  
 - MongoDB
 - Firebase  
-- Tailwind CSS (or your preferred CSS framework)  
+- Tailwind CSS
     
 
-Feel free to modify the content to better suit your project's specific features and technologies!
+
