@@ -6,6 +6,7 @@ import { authContext } from '../Provider/AuthProvider';
 import SportsHub from '../Components/SportsHub';
 import TrastedSports from '../Components/TrastedSports';
 import SportsCategory from '../Components/SportsCategory';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -13,6 +14,8 @@ const Home = () => {
     const { theme, setTheme } = useContext(authContext)
     return (
         <div className={`${theme ? "bg-white pt-14 overflow-x-hidden" : "bg-gray-800 text-white pt-14 overflow-x-hidden"}`}>
+
+            <Helmet><title>SE | Home</title></Helmet>
 
             <div className="  flex justify-end mx-5 "><label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}

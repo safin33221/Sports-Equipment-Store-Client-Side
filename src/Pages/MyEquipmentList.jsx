@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -58,10 +59,11 @@ const MyEquipmentList = () => {
                 });
             }
         });
-        
+
     }
     return (
         <div>
+            <Helmet><title>SE | My EquipmentList</title></Helmet>
             <h1 className="text-2xl font-bold w-11/12 mx-auto">My Equipments:{products.length}</h1>
 
             {

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { authContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const AddEquipment = () => {
     const { user } = useContext(authContext)
@@ -48,12 +49,34 @@ const AddEquipment = () => {
     }
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
+            <Helmet><title>SE | Add Equipment</title></Helmet>
             <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">Add New Product</h2>
             <form onSubmit={handleAddItem}
-                className="space-y-4 grid grid-cols-12 gap-3">
+                className=" grid grid-cols-12 gap-3">
+                
+                <div className='col-span-12 md:col-span-6'>
+                    <label className="block text-sm font-medium text-gray-700">User Email:</label>
+                    <input
+                        value={user.email}
+                        dis
+                        type="text"
+                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+                        required
+                    />
+                </div>
+                
+                <div className='col-span-12 md:col-span-6'>
+                    <label className="block text-sm font-medium text-gray-700">User Name:</label>
+                    <input
+                        value={user.displayName}
+                        disabled
+                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+                        required
+                    />
+                </div>
                 {/* Image Input */}
                 <div className='col-span-12'>
-                    <label className="block text-sm font-medium text-gray-700">Image</label>
+                    <label className="block text-sm font-medium text-gray-700">Image URL</label>
                     <input
                         type="text"
                         name="image"
@@ -65,7 +88,7 @@ const AddEquipment = () => {
 
                 {/* Item Name */}
                 <div className='col-span-6'>
-                    <label className="block text-sm font-medium text-gray-700">Item Name</label>
+                    <label className="block text-sm font-medium text-gray-700">Product Name</label>
                     <input
                         type="text"
                         name="itemName"
@@ -143,7 +166,7 @@ const AddEquipment = () => {
                     <input
                         type="text"
                         name="processingTime"
-                        placeholder="e.g., 3-5 days"
+                        placeholder=" 3-5 days"
                         className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />

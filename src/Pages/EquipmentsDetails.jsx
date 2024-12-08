@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 
 const EquipmentsDetails = () => {
@@ -7,6 +9,7 @@ const EquipmentsDetails = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
+            <Helmet><title>SE | Equipments Details</title></Helmet>
 
 
             <div className=" m-4 rounded-lg border border-base-200 shadow-lg overflow-hidden flex flex-col md:flex-row">
@@ -29,7 +32,15 @@ const EquipmentsDetails = () => {
                         <p className="text-sm text-gray-600">Processing Time: {processingTime}</p>
                         <p className="text-sm text-gray-600">Stock Status: {stockStatus} in stock</p>
                     </div>
-                    
+                    <div>
+                        <button className="btn btn-outline m-3">
+                            Add To Cart
+                        </button>
+                        <button className="btn btn-outline my-3">
+                            <FaHeart />
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>

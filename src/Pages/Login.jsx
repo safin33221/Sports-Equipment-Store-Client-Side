@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { loginUserWithEmailPass, createUserWithGoogle } = useContext(authContext)
@@ -60,6 +61,7 @@ const Login = () => {
     }
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg py-10 my-6">
+            <Helmet><title>SE | Login</title></Helmet>
             <h1 className="text-2xl font-bold text-center mb-3">Login Now</h1>
 
             <form onSubmit={handleLoginwithEimailPasswored}>

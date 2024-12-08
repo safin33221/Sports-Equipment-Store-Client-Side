@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -12,6 +13,7 @@ const AllSportsEquipment = () => {
     }
     return (
         <div className="w-11/12 mx-auto py-5 ">
+            <Helmet><title>SE | All Sports Equipment </title></Helmet>
             <div className="flex justify-between py-4 items-center">
                 <h1 className="font-bold ">Total products : {loadedproduct.length}</h1>
                 <button onClick={handleSortByPrice} className="btn">Sort by price</button>

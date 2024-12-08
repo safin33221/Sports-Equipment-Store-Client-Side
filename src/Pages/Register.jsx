@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const {  createUserWithEmailPass, setUser } = useContext(authContext)
@@ -65,6 +66,7 @@ const Register = () => {
     
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg my-6">
+            <Helmet><title>SE | Register</title></Helmet>
             <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
             <form onSubmit={handleRegisterWithEmailPassowrd} >
                 <label className="input input-bordered flex items-center gap-2">

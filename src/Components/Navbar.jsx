@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import { FaRegUserCircle } from 'react-icons/fa';
-import logo  from "../assets/logo.png";
+import logo from "../assets/logo.png";
+import { toast } from 'react-toastify';
 
 
 const Navbar = () => {
@@ -21,10 +22,17 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
-                console.log(result);
+                return toast.success('Log Out successful', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+
+                });
             })
             .catch(error => {
-                console.log(error);
+                
             })
     }
     return (
@@ -51,7 +59,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <img className="w-12  h-12 rounded-full" src={logo} alt="" />
+                <img className="w-10  h-10 rounded-full" src={logo} alt="" />
                 <a className=" mx-3 font-bold  text-2xl hidden md:flex">Sports Equipment</a>
             </div>
             <div className="navbar-center hidden lg:flex">

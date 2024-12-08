@@ -51,10 +51,10 @@ const AuthProvider = ({ children }) => {
         createUserWithGoogle,
         signOutUser,
         setUser,
+        setTheme,
         user,
         loading,
         theme,
-        setTheme
     }
     return (
         <authContext.Provider value={authInfo}>

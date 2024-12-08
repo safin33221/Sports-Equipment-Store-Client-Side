@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const MainLayout = () => {
     return (
         <div >
+            
             <nav className="bg-[#f3f4f6] ">
                 <Navbar></Navbar>
             </nav>

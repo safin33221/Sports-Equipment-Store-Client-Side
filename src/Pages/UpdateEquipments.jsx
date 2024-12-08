@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -46,6 +47,7 @@ const UpdateEquipments = () => {
     }
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
+            <Helmet><title>SE | Update Equipments</title></Helmet>
             <div>
                 <h1 className='text-2xl font-bold '>User info</h1>
 
@@ -76,7 +78,7 @@ const UpdateEquipments = () => {
                     </div>
                 </div>
             </div>
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Add New Item</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Add New Product</h2>
             <form onSubmit={handleUpdate}
                 className="space-y-4 grid grid-cols-12 gap-3">
                 {/* Image Input */}
