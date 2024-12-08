@@ -7,7 +7,7 @@ const Footer = () => {
                 <p className="font-bold">
                     Sports Equipment
                     <br />
-                    Providing reliable tech since 1992
+                    Providing Service since 2015
                 </p>
                 <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
                 <p>Email: safin33221@gmail.com</p>

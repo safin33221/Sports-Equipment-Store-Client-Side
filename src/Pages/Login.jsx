@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
     const { loginUserWithEmailPass, createUserWithGoogle } = useContext(authContext)
+    const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
     const handleLoginwithEimailPasswored = (e) => {
         e.preventDefault()
@@ -76,7 +78,7 @@ const Login = () => {
                         <path
                             d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                     </svg>
-                    <input name="email" type="text" className="grow" placeholder="Email" />
+                    <input required name="email" type="text" className="grow" placeholder="Email" />
                 </label>
 
                 <label className="input input-bordered flex items-center gap-2 my-4">
@@ -90,8 +92,14 @@ const Login = () => {
                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                             clipRule="evenodd" />
                     </svg>
-                    <input name="password" type="password" className="grow" placeholder="password" />
+                    <input required name="password" type={`${showPass ? "text" : "password"}`} className="grow" placeholder="password" />
+                    <div onClick={() => setShowPass(!showPass)}>
+                        {showPass ? <FaEye /> : <FaEyeSlash />}
+                    </div>
                 </label>
+                <div className="hover:underline mb-2 cursor-pointer text-gray-700" >
+                    <p>Forget Password?</p>
+                </div>
                 <label>
 
                     <button type="submit" className="btn w-full font-bold mx-auto block">Login</button>
@@ -99,9 +107,9 @@ const Login = () => {
             </form>
             <hr className="my-3" />
             <div className="flex gap-4">
-                
+
                 <button onClick={handleLoginWithGoogle} className="btn btn-outline w-full ">Login with Google</button>
-                
+
 
             </div>
             <hr className="my-3" />
