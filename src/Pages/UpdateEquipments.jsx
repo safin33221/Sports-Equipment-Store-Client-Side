@@ -51,8 +51,8 @@ const UpdateEquipments = () => {
             <div>
                 <h1 className='text-2xl font-bold '>User info</h1>
 
-                <div className='flex gap-4 my-4'>
-                    <div className='w-1/2'>
+                <div className='grid grid-cols-12 gap-4 my-4'>
+                    <div className='col-span-12 md:col-span-6'>
                         <label className="block text-sm font-medium text-gray-700">User Email</label>
                         <input
                             disabled
@@ -64,7 +64,7 @@ const UpdateEquipments = () => {
                             required
                         />
                     </div>
-                    <div className='w-1/2'>
+                    <div className=' col-span-12 md:col-span-6'>
                         <label className="block text-sm font-medium text-gray-700">User Name</label>
                         <input
                             disabled
@@ -96,7 +96,7 @@ const UpdateEquipments = () => {
 
                 {/* Item Name */}
                 <div className='col-span-6'>
-                    <label className="block text-sm font-medium text-gray-700">Item Name</label>
+                    <label className="block text-sm font-medium text-gray-700">Product Name</label>
                     <input
                         defaultValue={itemName}
                         type="text"
@@ -204,7 +204,7 @@ const UpdateEquipments = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="col-span-12 w-56  mx-auto blockw-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="col-span-12 w-72  mx-auto blockw-full bg-[#80c7e1] !text-black py-2 px-4 rounded-md shadow-md  focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                     Update
                 </button>
