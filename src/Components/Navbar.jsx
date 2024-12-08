@@ -32,7 +32,7 @@ const Navbar = () => {
                 });
             })
             .catch(error => {
-                
+
             })
     }
     return (

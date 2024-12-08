@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CiImageOn } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const {  createUserWithEmailPass, setUser } = useContext(authContext)
+    const { createUserWithEmailPass, setUser } = useContext(authContext)
+    const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
 
     const handleRegisterWithEmailPassowrd = e => {
@@ -63,7 +65,7 @@ const Register = () => {
 
     }
 
-    
+
     return (
         <div className="w-96 mx-auto p-10 border-2 rounded-lg my-6">
             <Helmet><title>SE | Register</title></Helmet>
@@ -109,14 +111,17 @@ const Register = () => {
                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                             clipRule="evenodd" />
                     </svg>
-                    <input required name="password" type="password" className="grow" placeholder="password" />
+                    <input required name="password" type={`${showPass ? "text" : "password"}`} className="grow" placeholder="password" />
+                    <div onClick={() => setShowPass(!showPass)}>
+                        {showPass ? <FaEye /> : <FaEyeSlash />}
+                    </div>
                 </label>
                 <label>
                     <button type="submit" className="btn btn-outline  mx-auto block w-full">Register</button>
                 </label>
             </form>
             <hr className="my-3" />
-            
+
             <h1>Already have an account <Link to='/login' className='text-red-400 underline'>Login Now</Link></h1>
         </div>
     );
