@@ -48,7 +48,7 @@ const AddEquipment = () => {
 
     }
     return (
-        <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg">
+        <div className="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-lg pt-24">
             <Helmet><title>SE | Add Equipment</title></Helmet>
             <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">Add New Product</h2>
             <form onSubmit={handleAddItem}

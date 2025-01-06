@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { authContext } from '../Provider/AuthProvider';
 import { FaRegUserCircle } from 'react-icons/fa';
 import logo from "../assets/logo.png";
@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(authContext)
+    const location = useLocation()
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/SportsEquipment'>All Sports Equipment</NavLink></li>
@@ -18,7 +19,7 @@ const Navbar = () => {
             </>
         }
     </>
-    
+
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
@@ -36,7 +37,7 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="navbar fixed px-20   z-50 backdrop-blur-sm  ">
+        <div className={`navbar fixed px-10  z-50 backdrop-blur-sm ${location.pathname === '/' && "text-white"}  `}>
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

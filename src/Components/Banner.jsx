@@ -26,13 +26,13 @@ const Banner = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                className='h-[500px]'
+                className='h-[550px] -translate-y-10'
                 loop={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 
             >
-                <SwiperSlide><img src={slider1} /></SwiperSlide>
+                
                 <SwiperSlide><img src={slider2} /></SwiperSlide>
                 <SwiperSlide><img src={slider3} /></SwiperSlide>
                 <SwiperSlide><img src={slider4} /></SwiperSlide>
@@ -43,7 +43,7 @@ const Banner = () => {
                 <SwiperSlide><img src={slider9} /></SwiperSlide>
                 <SwiperSlide><img src={slider10} /></SwiperSlide>
                 <SwiperSlide><img src={slider11} /></SwiperSlide>
-                <SwiperSlide><img src={slider12} /></SwiperSlide>
+                
 
             </Swiper>
         </div>

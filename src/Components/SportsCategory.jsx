@@ -7,7 +7,7 @@ const SportsCategory = () => {
                 <h2 className="text-3xl font-bold text-center mb-8 ">Sports Categories__</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                    <div className=" bg-[#80c7e1] !text-white hover:scale-105 duration-200 border-2  ease-in-out shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow"
+                    <div className=" bg-[#80c7e1] !text-white hover:scale-105 hover:transition-all  duration-300 border-2  ease-linear overflow-hidden shadow-lg rounded-lg p-6 hover:shadow-xl "
                     >
                         <h3 className="text-xl font-semibold text-gray-800 mb-4">
                             Football Gear

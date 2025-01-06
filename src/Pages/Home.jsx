@@ -17,7 +17,7 @@ const Home = () => {
 
             <Helmet><title>SE | Home</title></Helmet>
 
-            <div className="  flex justify-end mx-5 "><label className="swap swap-rotate fixed top-9 text-[#80c7e1] z-50">
+            <div className="  flex justify-end mx-5 "><label className="swap swap-rotate fixed top-16 text-[#80c7e1] z-50">
                 {/* this hidden checkbox controls the state */}
                 <input onClick={() => setTheme(!theme)} type="checkbox" className="theme-controller" value="synthwave" />
 
