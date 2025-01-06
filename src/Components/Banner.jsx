@@ -20,13 +20,14 @@ import slider11 from "../assets/11.png";
 import slider12 from "../assets/12.png";
 const Banner = () => {
     return (
-        <div className=' w-10/12 md:w-6/12 mx-auto'>
+        <div className='w-full  mx-auto'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                
+                className='h-[500px]'
+                loop={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 
