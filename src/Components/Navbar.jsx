@@ -12,6 +12,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/SportsEquipment'>All Sports Equipment</NavLink></li>
+        <li><NavLink to='/aboutUs'>About Us</NavLink></li>
         {
             user && <>
                 <li><NavLink to='/AddEquipment'>Add Equipment </NavLink></li>
@@ -37,7 +38,7 @@ const Navbar = () => {
             })
     }
     return (
-        <div className={`navbar fixed px-10  z-50 backdrop-blur-sm ${location.pathname === '/' && "text-white"}  `}>
+        <div className={`navbar fixed top-0 px-10  bg-[#3db064] z-50 backdrop-blur-sm text-black}  `}>
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,8 +77,8 @@ const Navbar = () => {
                 }
                 {
                     user ?
-                        <button onClick={handleSignOut} className="btn">Log Out</button>
-                        : <Link to='/login' className="btn">Login</Link>
+                        <button onClick={handleSignOut} className="btn bg-[#378652] text-white  py-2 rounded-md transition hover:bg-[#297d45]">Log Out</button>
+                        : <Link to='/login' className="btn  bg-[#378652] text-white  py-2 rounded-md transition hover:bg-[#297d45]">Login</Link>
                 }
             </div>
         </div>

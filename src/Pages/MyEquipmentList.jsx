@@ -61,7 +61,7 @@ const MyEquipmentList = () => {
 
     }
     return (
-        <div>
+        <div className="pt-16">
             <Helmet><title>SE | My EquipmentList</title></Helmet>
             <h1 className="text-2xl font-bold w-11/12 mx-auto">My Equipments:{products.length}</h1>
 
@@ -91,11 +91,11 @@ const MyEquipmentList = () => {
                             </div>
                             <div className="py-3 flex gap-3 justify-start text-black">
                                 <Link to={`/UpdateEquipments/${item._id}`}
-                                    className="px-4 py-2 btn btn-outline !text-black rounded-md hover:bg-[#80c7e1] transition">
+                                    className="px-4 py-2 btn btn-outline !text-black rounded-md hover:bg-[#a9eabf] transition">
                                     Update
                                 </Link>
                                 <button onClick={() => handleDelete(item._id)}
-                                    className="px-4 py-2  btn btn-outline !text-black rounded-md hover:bg-[#80c7e1] transition">
+                                    className="px-4 py-2  btn btn-outline !text-black rounded-md hover:bg-[#a9eabf] transition">
                                     Delete
                                 </button>
                             </div>

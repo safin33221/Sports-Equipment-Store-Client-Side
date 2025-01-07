@@ -60,7 +60,7 @@ const AddEquipment = () => {
                         value={user.email}
                         dis
                         type="text"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
                         required
                     />
                 </div>
@@ -70,7 +70,7 @@ const AddEquipment = () => {
                     <input
                         value={user.displayName}
                         disabled
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
                         required
                     />
                 </div>
@@ -81,7 +81,7 @@ const AddEquipment = () => {
                         type="text"
                         name="image"
                         placeholder="Image URL"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
                         required
                     />
                 </div>
@@ -93,7 +93,7 @@ const AddEquipment = () => {
                         type="text"
                         name="itemName"
                         placeholder="Enter item name"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -105,7 +105,7 @@ const AddEquipment = () => {
                         type="text"
                         name="categoryName"
                         placeholder="Enter category name"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -116,7 +116,7 @@ const AddEquipment = () => {
                     <textarea
                         name="description"
                         placeholder="Enter item description"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         rows="3"
                         required
                     />
@@ -129,7 +129,7 @@ const AddEquipment = () => {
                         type="number"
                         name="price"
                         placeholder="Enter price"
-                        className=" p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className=" p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -144,7 +144,7 @@ const AddEquipment = () => {
                         min="1"
                         max="5"
                         step="0.1"
-                        className=" p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className=" p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -156,7 +156,7 @@ const AddEquipment = () => {
                         type="text"
                         name="customization"
                         placeholder="Customization options (comma-separated)"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                     />
                 </div>
 
@@ -167,7 +167,7 @@ const AddEquipment = () => {
                         type="text"
                         name="processingTime"
                         placeholder=" 3-5 days"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -179,7 +179,7 @@ const AddEquipment = () => {
                         type="number"
                         name="stockStatus"
                         placeholder="Available quantity"
-                        className="p-2 border-2  outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+                        className="p-2 border-2  focus:border-[#a9eabf] outline-none mt-1 block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
                         required
                     />
                 </div>
@@ -187,7 +187,7 @@ const AddEquipment = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="col-span-12 w-72 mx-auto blockw-full bg-[#80c7e1] text-black font-normal py-2 px-4 rounded-md shadow-md btn-outline focus:outline-none  "
+                    className="col-span-12 hover:text-black mx-auto block w-full bg-[#4fb972]  py-2 rounded-md transition hover:bg-[#3bb664]  font-normal px-4  shadow-md btn-outline focus:outline-none  "
                 >
                     Add Product
                 </button>

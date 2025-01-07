@@ -10,12 +10,13 @@ import MyEquipmentList from '../Pages/MyEquipmentList';
 import UpdateEquipments from '../Pages/UpdateEquipments';
 import PrivetRoute from '../PirvetRoute/PrivetRoute';
 import ErrorPage from '../Pages/ErrorPage';
+import AboutUs from '../Pages/AboutUs';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
                 path: '/SportsEquipment',
                 element: <AllSportsEquipment></AllSportsEquipment>,
                 loader: () => fetch('https://a-sports-equipment-store-server-site.vercel.app/SportsEquipment')
+
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs></AboutUs>,
+
 
             },
             {

@@ -62,7 +62,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="w-96 mx-auto p-10 border-2 rounded-lg py-10 my-6">
+        <div className="w-96 mx-auto p-10 border-2 rounded-lg py-10 my-6 mt-24">
             <Helmet><title>SE | Login</title></Helmet>
             <h1 className="text-2xl font-bold text-center mb-3">Login Now</h1>
 

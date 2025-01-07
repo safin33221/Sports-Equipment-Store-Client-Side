@@ -67,7 +67,7 @@ const Register = () => {
 
 
     return (
-        <div className="w-96 mx-auto p-10 border-2 rounded-lg my-6">
+        <div className="w-96 mx-auto p-10 border-2 rounded-lg my-6 mt-24">
             <Helmet><title>SE | Register</title></Helmet>
             <h1 className="text-center font-bold text-2xl mb-3">Register Now</h1>
             <form onSubmit={handleRegisterWithEmailPassowrd} >

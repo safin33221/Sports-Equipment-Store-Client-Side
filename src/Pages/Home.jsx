@@ -13,11 +13,11 @@ const Home = () => {
     const products = useLoaderData()
     const { theme, setTheme } = useContext(authContext)
     return (
-        <div className={`${theme ? "bg-white  overflow-x-hidden" : "bg-gray-800 text-white  overflow-x-hidden"} ` }>
+        <div className={`${theme ? "bg-white  overflow-x-hidden" : "bg-black text-white  overflow-x-hidden"} ` }>
 
             <Helmet><title>SE | Home</title></Helmet>
 
-            <div className="  flex justify-end mx-5 "><label className="swap swap-rotate fixed top-16 text-[#80c7e1] z-50">
+            <div className="  flex justify-end mx-5 "><label className="swap swap-rotate fixed top-16 text-[#4eef83] z-50">
                 {/* this hidden checkbox controls the state */}
                 <input onClick={() => setTheme(!theme)} type="checkbox" className="theme-controller" value="synthwave" />
 
