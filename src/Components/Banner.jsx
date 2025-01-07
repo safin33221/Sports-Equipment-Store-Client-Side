@@ -20,19 +20,20 @@ import slider11 from "../assets/11.png";
 import slider12 from "../assets/12.png";
 const Banner = () => {
     return (
-        <div className='w-full  mx-auto'>
+        <div className='w-full  mx-auto pt-16'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={50}
+                spaceBetween={20}
                 slidesPerView={1}
                 navigation
-                className='h-[550px] -translate-y-10'
+                className='h-[450px] '
                 loop={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 
             >
                 
+                <SwiperSlide><img src={slider1} /></SwiperSlide>
                 <SwiperSlide><img src={slider2} /></SwiperSlide>
                 <SwiperSlide><img src={slider3} /></SwiperSlide>
                 <SwiperSlide><img src={slider4} /></SwiperSlide>
@@ -43,6 +44,7 @@ const Banner = () => {
                 <SwiperSlide><img src={slider9} /></SwiperSlide>
                 <SwiperSlide><img src={slider10} /></SwiperSlide>
                 <SwiperSlide><img src={slider11} /></SwiperSlide>
+                <SwiperSlide><img src={slider12}/></SwiperSlide>
                 
 
             </Swiper>

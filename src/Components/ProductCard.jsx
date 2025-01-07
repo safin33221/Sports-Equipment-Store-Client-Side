@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
                 <img
                     src={image}
                     alt={itemName}
-                    className="mx-auto h-44 w-full bg-contain"
+                    className="mx-auto h-44 w-full bg-cover object-fill"
                 />
                 <hr />
 
@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
                 <div className="px-4 flex flex-col flex-grow justify-between">
                     {/* Item Info */}
                     <div>
-                        <h2 className="text-lg font-semibold">{itemName}</h2>
+                        <h2 className="text-lg font-semibold text-green-500">{itemName}</h2>
                         <p className="text-sm">{categoryName}</p>
                         <p className="text-lg font-semibold">${price}</p>
                     </div>
