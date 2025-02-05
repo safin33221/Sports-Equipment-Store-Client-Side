@@ -53,7 +53,7 @@ Sports Equipment Store is an e-commerce platform that allows users to browse and
    ```
 2. Navigate to the project directory:
    ```sh
-   cd sports-equipment-store
+   cd Sports-Equipment-Store-Client-Side
    ```
 3. Install dependencies:
    ```sh
